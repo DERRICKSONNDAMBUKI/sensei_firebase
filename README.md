@@ -5,3 +5,12 @@
 ```
 npm i firebase-tools -g
 ```
+
+##### Start
+```
+firebase emulators:start
+```
+or
+```
+firebase serve
+```
