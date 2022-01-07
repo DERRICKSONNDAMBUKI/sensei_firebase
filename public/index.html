@@ -6,6 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- load scripts -->
 
+    <!-- fake strings -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Faker/0.5.12/MinFaker.js"
+      integrity="sha512-+qHsuYJbatsUfmvRdKj5xyKJO1othF3ZeK/X6ap2pNJrHYtSdrNmZFTisz79wr+ddh1XIJs3EpsISWYkJEguwQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <!-- firebase -->
     <script src="https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
 
     <!-- TODO: Add SDKs for Firebase products that you want to use -->
@@ -92,6 +101,10 @@
     <section id="whenSignedIn" hidden="true">
       <div id="userDetails"></div>
       <button id="signOutBtn">Sign Out</button>
+    </section>
+    <section>
+      <ul id="thingsList"></ul>
+      <button id="createThing">Create Random Things</button>
     </section>
   </body>
 </html>

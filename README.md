@@ -14,3 +14,6 @@ or
 ```
 firebase serve
 ```
+
+##### Load fake data
+https://cdnjs.com/libraries/Faker
