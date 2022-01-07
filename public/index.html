@@ -6,13 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- load scripts -->
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use -->
+    <script src= "https://www.gstatic.com/firebasejs/7.17.1/firebase-app.js"></script>
 
+    <!-- TODO: Add SDKs for Firebase products that you want to use -->
     <!-- https://firebase.google.com/docs/web/setup#available-libraries -->
 
-    <!-- <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script> -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script> -->
-    <script type="module">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    
+    <script>
+         // Your web app's Firebase configuration
+
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+         const firebaseConfig = {
+        apiKey: "AIzaSyAs0FBxBUlKOwWjnC2r46mhs40lsRtu6DE",
+
+        authDomain: "sensei-firebase-4c24e.firebaseapp.com",
+
+        projectId: "sensei-firebase-4c24e",
+
+        storageBucket: "sensei-firebase-4c24e.appspot.com",
+
+        messagingSenderId: "892753440779",
+
+        appId: "1:892753440779:web:5cccb698c97671fd7a570e",
+
+        measurementId: "G-8BZT9WFFZ9",
+      };
+
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    
+    
+    
+    
+    
+    <!-- <script type="module">
       // Import the functions you need from the SDKs you need
 
       import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
@@ -49,19 +79,23 @@
       const app = initializeApp(firebaseConfig);
 
       const analytics = getAnalytics(app);
-    </script>
+    </script> -->
+
+    <!-- ricky has bugs on the commented code -->
+    
     <script src="./main.js" defer></script>
     <title>Sensei Firebase Vanilla</title>
   </head>
+
   <body>
     <h1>Sensei Firebase and Vanilla.js</h1>
 
     <section id="whenSignedOut">
-<button id="signInBtn">Sign in with Google</button>
+      <button id="signInBtn">Sign in with Google</button>
     </section>
-    <section id="whenSignedIn" hidden='true'>
-<div id="userDetails"></div>
-<button id="signOutBtn">Sign Out</button>
+    <section id="whenSignedIn" hidden="true">
+      <div id="userDetails"></div>
+      <button id="signOutBtn">Sign Out</button>
     </section>
   </body>
 </html>
