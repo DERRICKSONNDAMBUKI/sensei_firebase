@@ -17,14 +17,13 @@ signOutBtn.onclick = () => auth.signOut();
 // one-time operation
 
 // stream of operations
-
-auth.onAuthStateChanged(user => {
+auth.onAuthStateChanged((user) => {
   if (user) {
     // signed in
     whenSignedIn.hidden = false;
     whenSignedOut.hidden = true;
     console.log(user);
-    userDetails.innerHTML = `<h3>Hello, ${user.displayName}!</h3> <p> User ID: ${user.uid}</p> `;
+    userDetails.innerHTML = `<h3>Hello, ${user.displayName}!</h3> <p>Email: ${user.email}</p> <p> User ID: ${user.uid}</p> `;
   } else {
     // not signed in
     whenSignedIn.hidden = true;
