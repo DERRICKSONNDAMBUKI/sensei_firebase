@@ -37,7 +37,9 @@ const db = firebase.firestore();
 const createThing = document.getElementById("createThing");
 const thingList = document.getElementById("thingsList");
 
-createThing.onclick(console.log("hello"));
+createThing.onclick = () => {
+  console.log("Hello");
+};
 
 let thingsRef;
 let unsubscribe;
@@ -53,6 +55,14 @@ auth.onAuthStateChanged((user) => {
         name: faker.commerce.productName(),
         createdAt: serverTimestamp(),
       });
+      console.log(thingsRef.name);
     };
+    unsubscribe = thingsRef.where('uid','==',user.uid).onSnapshot(querySnapshot=>{
+      const items = querySnapshot.docs.map(doc =>{
+        return `<li>${doc.data().name}`
+      })
+      thingList.innerHTML = items.join('')
+    })
   }
 });
+// ricky has bugs
