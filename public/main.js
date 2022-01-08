@@ -57,12 +57,17 @@ auth.onAuthStateChanged((user) => {
       });
       console.log(thingsRef.name);
     };
-    unsubscribe = thingsRef.where('uid','==',user.uid).onSnapshot(querySnapshot=>{
-      const items = querySnapshot.docs.map(doc =>{
-        return `<li>${doc.data().name}`
-      })
-      thingList.innerHTML = items.join('')
-    })
+    unsubscribe = thingsRef
+      .where("uid", "==", user.uid)
+      .orderBy("createdAt")
+      .onSnapshot((querySnapshot) => {
+        const items = querySnapshot.docs.map((doc) => {
+          return `<li>${doc.data().name}`;
+        });
+        thingList.innerHTML = items.join("");
+      });
+  } else {
+    unsubscribe && unsubscribe();
   }
 });
 // ricky has bugs
